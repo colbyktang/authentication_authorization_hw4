@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 echo "Connected successfully";
-
+/*
 $sql = "SELECT username, password FROM UserAccounts";
 $result = $conn->query($sql);
 
@@ -26,4 +26,5 @@ if ($result->num_rows > 0) {
     echo "0 results";
   }
 }
+*/
 ?>
