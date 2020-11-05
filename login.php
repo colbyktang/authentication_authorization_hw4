@@ -18,16 +18,15 @@ $sql = "SELECT username, password FROM UserAccounts";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-  echo "0 results";
-  /*
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      echo "Username/Password: " . $row["username"]. " " . $row["password"]. "<br>";
+      echo $row["username"];
+      //echo "Username/Password: " . $row["username"]. " " . $row["password"]. "<br>";
     }
   } else {
     echo "0 results";
   }
-  */
+  
 }
 
 ?>
