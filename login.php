@@ -20,7 +20,8 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      echo $row["username"];
+      echo "Row";
+      //echo $row["username"];
       //echo "Username/Password: " . $row["username"]. " " . $row["password"]. "<br>";
     }
   } else {
