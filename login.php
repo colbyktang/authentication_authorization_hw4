@@ -20,6 +20,7 @@ echo "login_username: " . $login_username;
 echo "login_password: " . $login_password;
 
 $sql = "SELECT username, password FROM user_accounts WHERE username=\'$login_username\' AND password=\'$login_password\'";
+echo "sql: " . $sql;
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
