@@ -25,9 +25,8 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_array()) {
         echo "Username/Password: " . $row["username"]. " " . $row["password"]. "<br>";
     }
-    else {
-        echo "0 results";
-    }
 }
-
+else {
+    echo "0 results";
+}
 ?>
