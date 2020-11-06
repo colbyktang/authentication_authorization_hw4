@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 
 echo "Connected successfully<br>";
 
-$sql = "SELECT username, password FROM user_accounts WHERE username='$login_username' AND password='$login_password'";
+$sql = "SELECT username, password FROM user_accounts WHERE username=\'$login_username\' AND password=\'$login_password\'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
