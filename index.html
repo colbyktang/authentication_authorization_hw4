@@ -23,21 +23,8 @@
         </div>
         <br>
         </form>
-        <form method="post">
+        <form action="insert_into_database.php" method="post">
             <input type="button" name="test" id="test" value="Set hashed passwords" /><br/>
         </form>
-
-        <?php
-
-            function testfun()
-            {
-                echo "Your test function on button click is working";
-            }
-
-            if(array_key_exists('test',$_POST)){
-                testfun();
-            }
-
-        ?>
     </body>
 </html>
