@@ -50,7 +50,7 @@ else {
 }
 
 function insert_user ($conn, $userID, $username, $password, $clearance) {
-    $sql = "INSERT INTO user_accounts (userID, username, password, clearance) VALUES ($userID, $username, $password, $clearance)";
+    $sql = "INSERT INTO user_accounts (userID, username, password, clearance) VALUES ($userID, '$username', '$password', '$clearance')";
     echo "sql: " . $sql . "<br>";
     if ($conn->query($sql) === TRUE) {
         echo $username . " inserted successfully! <br>";
