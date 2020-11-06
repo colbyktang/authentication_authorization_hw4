@@ -12,16 +12,27 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-echo "Connected successfully<br>";
+echo "Connected successfully! <br>";
 
-$sql = "INSERT INTO user_accounts (userID, username, password, clearance) VALUES (1, 'alice', '@1!c3', 'T')";
-echo "sql: " . $sql . "<br>";
+$username = 'alice';
+$password = md5('@1!c3');
+$clearance = 'T';
+insert_user(1, $username, $password, $clearance);
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully<br>";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error . "<br>";
-}
+$username = 'bob';
+$password = md5('B0b');
+$clearance = 'S';
+insert_user(2, $username, $password, $clearance);
+
+$username = 'charlie';
+$password = md5('Ch@r1!3');
+$clearance = 'C';
+insert_user(3, $username, $password, $clearance);
+
+$username = 'dave';
+$password = md5('D@v3');
+$clearance = 'U';
+insert_user(4, $username, $password, $clearance);
 
 $sql = "SELECT username, password FROM user_accounts";
 echo "sql: " . $sql . "<br>";
@@ -36,6 +47,16 @@ if ($result->num_rows > 0) {
 }
 else {
     echo "0 results";
+}
+
+function insert_user ($userID, $username, $password, $clearance) {
+    $sql = "INSERT INTO user_accounts (userID, username, password, clearance) VALUES ($userID, $username, $password, $clearance)";
+    echo "sql: " . $sql . "<br>";
+    if ($conn->query($sql) === TRUE) {
+        echo $username . " inserted successfully! <br>";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error . "<br>";
+    }
 }
 
 ?>
