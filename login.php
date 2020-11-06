@@ -16,10 +16,10 @@ if ($conn->connect_error) {
 }
 
 echo "Connected successfully<br>";
-echo "login_username: " . $login_username;
-echo "login_password: " . $login_password;
+echo "login_username: " . $login_username . "<br>";
+echo "login_password: " . $login_password . "<br>";
 
-$sql = "SELECT username, password FROM user_accounts WHERE username=\'$login_username\' AND password=\'$login_password\'";
+$sql = "SELECT username, password FROM user_accounts WHERE username='$login_username' AND password='$login_password'";
 echo "sql: " . $sql;
 $result = $conn->query($sql);
 
