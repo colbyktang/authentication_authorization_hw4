@@ -5,7 +5,7 @@ $password = "COSC4343";
 $dbname = "user_accounts";
 
 $login_username = $_POST['username'];
-$login_password = $_POST['password'];
+$login_password = md5($_POST['password']);
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
