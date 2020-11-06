@@ -17,22 +17,22 @@ echo "Connected successfully! <br>";
 $username = 'alice';
 $password = md5('@1!c3');
 $clearance = 'T';
-insert_user(1, $username, $password, $clearance);
+insert_user($conn, 1, $username, $password, $clearance);
 
 $username = 'bob';
 $password = md5('B0b');
 $clearance = 'S';
-insert_user(2, $username, $password, $clearance);
+insert_user($conn, 2, $username, $password, $clearance);
 
 $username = 'charlie';
 $password = md5('Ch@r1!3');
 $clearance = 'C';
-insert_user(3, $username, $password, $clearance);
+insert_user($conn, 3, $username, $password, $clearance);
 
 $username = 'dave';
 $password = md5('D@v3');
 $clearance = 'U';
-insert_user(4, $username, $password, $clearance);
+insert_user($conn, 4, $username, $password, $clearance);
 
 $sql = "SELECT username, password FROM user_accounts";
 echo "sql: " . $sql . "<br>";
@@ -49,7 +49,7 @@ else {
     echo "0 results";
 }
 
-function insert_user ($userID, $username, $password, $clearance) {
+function insert_user ($conn, $userID, $username, $password, $clearance) {
     $sql = "INSERT INTO user_accounts (userID, username, password, clearance) VALUES ($userID, $username, $password, $clearance)";
     echo "sql: " . $sql . "<br>";
     if ($conn->query($sql) === TRUE) {
