@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-echo "Connected successfully";
+echo "Connected successfully<br>";
 
 $sql = "SELECT username, password FROM user_accounts";
 $result = $conn->query($sql);
