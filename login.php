@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
     // this while loop does not work, investigate fetch_assoc()
     echo $result;
 
-    while ($row = $result->fetch_array()) {
+    while ($row = $result->fetch_assoc()) {
         echo "Username/Password: " . $row["username"]. " " . $row["password"]. "<br>";
     }
 }
