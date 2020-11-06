@@ -20,12 +20,15 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     // this while loop does not work, investigate fetch_assoc()
+    echo $result;
+    /*
     while ($row = mysqli_fetch_assoc($result)) {
       echo "Username/Password: " . $row["username"]. " " . $row["password"]. "<br>";
     }
   } else {
     echo "0 results";
   }
+  */
   
 }
 
