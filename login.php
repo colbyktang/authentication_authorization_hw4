@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 echo "Connected successfully";
 
-$sql = "SELECT username, password FROM UserAccounts";
+$sql = "SELECT username, password FROM user_accounts";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -28,7 +28,6 @@ if ($result->num_rows > 0) {
     else {
         echo "0 results";
     }
-  
 }
 
 ?>
