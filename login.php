@@ -34,18 +34,29 @@ echo "Connected successfully<br>";
 echo "login_username: " . $login_username . "<br>";
 echo "login_password: " . $login_password . "<br>";
 
-
-
-
-$sql = "SELECT username, password FROM user_accounts WHERE username='$login_username' AND password='$login_password'";
+$sql = "SELECT username, password, clearance FROM user_accounts WHERE username='$login_username' AND password='$login_password'";
 echo "sql: " . $sql . "<br>";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
+    $row = $result->fetch_assoc();
+    $clearance = $row["clearance"];
+    if($clearance = 'T') {
+        // redirect if fulfilled
+        //header("Location:authorization_page.html");
+        echo "<img src=\"images/TopSecret.png\">";
+    }
+    elseif ($clearance = 'C') {
+        echo "<img src=\"images/Confidential.png\">";
+    }
 
-    while ($row = $result->fetch_assoc()) {
-        echo "Username/Password: " . $row["username"]. " " . $row["password"]. "<br>";
+    elseif ($clearance = 'S') {
+        echo "<img src=\"images/Secret.png\">";
+    }
+
+    elseif ($clearance = 'U') {
+        echo "<img src=\"images/Unclassified.png\">";
     }
 }
 else {
