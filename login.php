@@ -44,19 +44,19 @@ if ($result->num_rows > 0) {
     $clearance = $row["clearance"];
     $level_clearance = 1;
 
-    if($clearance = 'T') {
+    if($clearance === 'T') {
         level_clearance = 4;
     }
 
-    elseif ($clearance = 'S') {
+    elseif ($clearance === 'S') {
         level_clearance = 3;
     }
 
-    elseif ($clearance = 'C') {
+    elseif ($clearance === 'C') {
         level_clearance = 2;
     }
 
-    elseif ($clearance = 'U') {
+    elseif ($clearance === 'U') {
         level_clearance = 1;
     }
 
