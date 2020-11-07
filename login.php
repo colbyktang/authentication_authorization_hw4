@@ -42,20 +42,34 @@ if ($result->num_rows > 0) {
     // output data of each row
     $row = $result->fetch_assoc();
     $clearance = $row["clearance"];
+    $level_clearance = 1;
+
     if($clearance = 'T') {
-        // redirect if fulfilled
-        //header("Location:authorization_page.html");
-        echo "<img src=\"images/TopSecret.png\">";
-    }
-    elseif ($clearance = 'C') {
-        echo "<img src=\"images/Confidential.png\">";
+        level_clearance = 4;
     }
 
     elseif ($clearance = 'S') {
-        echo "<img src=\"images/Secret.png\">";
+        level_clearance = 3;
+    }
+
+    elseif ($clearance = 'C') {
+        level_clearance = 2;
     }
 
     elseif ($clearance = 'U') {
+        level_clearance = 1;
+    }
+
+    if ($level_clearance > 3) {
+        echo "<img src=\"images/TopSecret.png\">";
+    }
+    if ($level_clearance > 2) {
+        echo "<img src=\"images/Secret.png\">";
+    }
+    if ($level_clearance > 1) {
+        echo "<img src=\"images/Confidential.png\">";
+    }
+    if ($level_clearance > 0) {
         echo "<img src=\"images/Unclassified.png\">";
     }
 }
