@@ -40,7 +40,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<form action=\'index.html\'>";
-    echo "<input type=\'submit\' value=\'Log out\'>"
+    echo "<input type=\'submit\' value=\'Log out\'>";
     echo "</form>";
 
     // output data of each row
