@@ -55,7 +55,7 @@ function insert_user ($conn, $userID, $username, $password, $clearance) {
     if ($conn->query($sql) === TRUE) {
         echo $username . " inserted successfully! <br>";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error . "<br>";
+        die ("Error: " . $sql . "<br>" . $conn->error . "<br>");
     }
 }
 
