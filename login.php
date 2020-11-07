@@ -45,19 +45,19 @@ if ($result->num_rows > 0) {
     $level_clearance = 1;
 
     if($clearance === 'T') {
-        level_clearance = 4;
+        $level_clearance = 4;
     }
 
     elseif ($clearance === 'S') {
-        level_clearance = 3;
+        $level_clearance = 3;
     }
 
     elseif ($clearance === 'C') {
-        level_clearance = 2;
+        $level_clearance = 2;
     }
 
     elseif ($clearance === 'U') {
-        level_clearance = 1;
+        $level_clearance = 1;
     }
 
     if ($level_clearance > 3) {
